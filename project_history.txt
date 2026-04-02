@@ -1,0 +1,65 @@
+nmcli con mod "Проводное подключение 1" ipv4.addresses 192.168.1.100/24
+nmcli con mod "Проводное подключение 1" ipv4.gateway 192.168.1.1
+nmcli con mod "Проводное подключение 1" ipv4.dns 8.8.8.8
+nmcli con mod "Проводное подключение 1" ipv4.method manual
+nmcli con mod "Проводное подключение 1" ipv4.route-metric 50
+nmcli con up "Проводное подключение 1"
+hostnamectl set-hostname mephi-2026.domain.local
+ping -c 4 8.8.8.8
+ping -c 4 192.168.1.1
+ip route
+ping -c 4 8.8.8.8 > /tmp/network_check.txt
+ping -c 4 192.168.1.1 >> /tmp/network_check.txt
+hostnamectl
+dnf install -y nginx tcpdump libcap-ng-utils
+systemctl enable nginx
+systemctl start nginx
+dnf download tcpdump --destdir=/tmp
+rpm -ivh /tmp/tcpdump-4.99.6-2.fc43.x86_64.rpm
+nginx -v
+tcpdump --version
+getcap -v
+lsblk
+fdisk /dev/sdb
+mkfs.ext4 -L MEPHI_DATA /dev/sdb1
+mkdir -p /data/mephi-web
+echo "LABEL=MEPHI_DATA /data/mephi-web ext4 defaults 0 2" >> /etc/fstab
+systemctl daemon-reload
+mount -a
+df -h /data/mephi-web
+systemctl enable --now nginx
+systemctl status nginx
+journalctl -u nginx --since "5 minutes ago" > /tmp/nginx_recent_logs.txt
+cat /tmp/nginx_recent_logs.txt
+useradd mephi-admin
+echo "mephi-admin:P@ssw0rd2026" | chpasswd
+groupadd mephi-devs
+usermod -aG mephi-devs mephi-admin
+chown -R mephi-admin:mephi-devs /data/mephi-web
+chmod 2775 /data/mephi-web 
+getenforce
+setenforce 1
+sed -i 's/^SELINUX=.*/SELINUX=enforcing/' /etc/selinux/config
+semanage fcontext -a -t httpd_sys_content_t "/data/mephi-web(/.*)?"
+restorecon -Rv /data/mephi-web
+chmod u-s /usr/sbin/tcpdump
+setcap cap_net_raw,cap_net_admin+ep /usr/sbin/tcpdump
+getcap /usr/sbin/tcpdump
+sudo -u mephi-admin tcpdump --help
+exit
+echo "root" > /etc/ssh/denied_users
+echo "auth required pam_listfile.so item=user sense=deny file=/etc/ssh/denied_users onerr=succeed" >> /etc/pam.d/sshd
+echo "auth required pam_listfile.so item=user sense=deny file=/etc/ssh/denied_users onerr=succeed" >> /etc/pam.d/login
+sed -i 's/^#PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
+systemctl restart sshd
+exit
+grep -n "root" /etc/nginx/nginx.conf
+sed -i 's|root .*;|root /data/mephi-web;|' /etc/nginx/nginx.conf
+nginx -t
+grep -n "root" /etc/nginx/nginx.conf
+systemctl restart nginx
+curl http://localhost
+curl http://192.168.1.100
+history -a
+history > ~/project_history.txt
+exit

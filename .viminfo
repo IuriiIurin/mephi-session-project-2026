@@ -1,0 +1,95 @@
+# Этот viminfo-файл автоматически создан программой Vim 9.1.
+# Его можно (осторожно!) редактировать.
+
+# Viminfo version
+|1,4
+
+# Значение параметра 'encoding' в момент записи файла
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~H
+# Журнал командной строки (от новых к старым):
+:qa
+|2,0,1774984039,,"qa"
+
+# Журнал поисковой строки (от новых к старым):
+
+# Журнал вычислений (от новых к старым):
+
+# Журнал строки ввода (от новых к старым):
+
+# Журнал команд диагностики (от новых к старым):
+
+# Регистры:
+
+# Журнал общих закладок:
+'0  429  2  /mnt/project_history.txt
+|4,48,429,2,1774984039,"/mnt/project_history.txt"
+'1  433  0  /tmp/project_history.txt
+|4,49,433,0,1774983787,"/tmp/project_history.txt"
+'2  408  0  /tmp/project_history.txt
+|4,50,408,0,1774978209,"/tmp/project_history.txt"
+'3  408  0  /tmp/project_history.txt
+|4,51,408,0,1774978209,"/tmp/project_history.txt"
+'4  1  0  /tmp/project_history.txt
+|4,52,1,0,1774977308,"/tmp/project_history.txt"
+'5  1  0  /tmp/project_history.txt
+|4,53,1,0,1774977308,"/tmp/project_history.txt"
+'6  1  0  /tmp/project_history.txt
+|4,54,1,0,1774977308,"/tmp/project_history.txt"
+'7  1  0  /tmp/project_history.txt
+|4,55,1,0,1774977308,"/tmp/project_history.txt"
+'8  1  0  /tmp/project_history.txt
+|4,56,1,0,1774977019,"/tmp/project_history.txt"
+'9  1  0  /tmp/project_history.txt
+|4,57,1,0,1774977019,"/tmp/project_history.txt"
+
+# Журнал переходов (в начале более новые):
+-'  429  2  /mnt/project_history.txt
+|4,39,429,2,1774984039,"/mnt/project_history.txt"
+-'  1  0  /mnt/project_history.txt
+|4,39,1,0,1774984028,"/mnt/project_history.txt"
+-'  433  0  /tmp/project_history.txt
+|4,39,433,0,1774983787,"/tmp/project_history.txt"
+-'  433  0  /tmp/project_history.txt
+|4,39,433,0,1774983787,"/tmp/project_history.txt"
+-'  408  0  /tmp/project_history.txt
+|4,39,408,0,1774983766,"/tmp/project_history.txt"
+-'  408  0  /tmp/project_history.txt
+|4,39,408,0,1774983766,"/tmp/project_history.txt"
+-'  408  0  /tmp/project_history.txt
+|4,39,408,0,1774978209,"/tmp/project_history.txt"
+-'  408  0  /tmp/project_history.txt
+|4,39,408,0,1774978209,"/tmp/project_history.txt"
+-'  1  0  /tmp/project_history.txt
+|4,39,1,0,1774978136,"/tmp/project_history.txt"
+-'  1  0  /tmp/project_history.txt
+|4,39,1,0,1774978136,"/tmp/project_history.txt"
+-'  1  0  /tmp/project_history.txt
+|4,39,1,0,1774978136,"/tmp/project_history.txt"
+-'  1  0  /tmp/project_history.txt
+|4,39,1,0,1774978136,"/tmp/project_history.txt"
+-'  1  0  /tmp/project_history.txt
+|4,39,1,0,1774977308,"/tmp/project_history.txt"
+-'  1  0  /tmp/project_history.txt
+|4,39,1,0,1774977308,"/tmp/project_history.txt"
+-'  1  0  /tmp/project_history.txt
+|4,39,1,0,1774977019,"/tmp/project_history.txt"
+-'  1  0  /tmp/project_history.txt
+|4,39,1,0,1774977019,"/tmp/project_history.txt"
+-'  1  0  /tmp/project_history.txt
+|4,39,1,0,1774977019,"/tmp/project_history.txt"
+-'  1  0  /tmp/project_history.txt
+|4,39,1,0,1774977019,"/tmp/project_history.txt"
+
+# Журнал локальных закладок (от новых к старым):
+
+> /mnt/project_history.txt
+	*	1774984034	0
+	"	429	2
+
+> /tmp/project_history.txt
+	*	1774983784	0
+	"	433	0
